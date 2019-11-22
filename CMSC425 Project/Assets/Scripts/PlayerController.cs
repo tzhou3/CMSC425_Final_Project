@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float accel;
     private Rigidbody rb;
     public GameObject inventory;
+    public Animator anim;
     private bool hasSled;
 
 
@@ -16,6 +17,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         inventory.SetActive(false);
+        anim = GetComponentInChildren<Animator>();
     }
 
     private void Update()
@@ -35,7 +37,12 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetAxisRaw("Vertical") != 0)
             {
+                anim.SetBool("isWalking", true);
                 transform.position += transform.forward * speed * Time.deltaTime;
+            }
+            else
+            {
+                anim.SetBool("isWalking", false);
             }
         }
     }

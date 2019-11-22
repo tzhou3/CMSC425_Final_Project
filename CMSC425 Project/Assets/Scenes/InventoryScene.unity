@@ -388,6 +388,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 0f94509f455ae49828abb6793804d272,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 29f222b100dbd4de5af3b6ca58916247, type: 2}
+    - target: {fileID: -6057140222963153312, guid: 0f94509f455ae49828abb6793804d272,
+        type: 3}
+      propertyPath: m_WarningMessage
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -1908377141972725811, guid: 0f94509f455ae49828abb6793804d272,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.00007433985
+      objectReference: {fileID: 0}
+    - target: {fileID: -1908377141972725811, guid: 0f94509f455ae49828abb6793804d272,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0042371294
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f94509f455ae49828abb6793804d272, type: 3}
 --- !u!1 &454316637
@@ -573,6 +593,7 @@ MonoBehaviour:
   jump: 10
   accel: 3
   inventory: {fileID: 67828116}
+  anim: {fileID: 0}
 --- !u!4 &703178003
 Transform:
   m_ObjectHideFlags: 0
