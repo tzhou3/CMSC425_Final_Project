@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using System.Collections;
 public class PlayerController : MonoBehaviour
 {
     public float speed;
@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     public GameObject inventory;
     public Animator anim;
     private bool hasSled;
-
+    private bool isFinishedAnimation;
 
 
     void Start()
@@ -18,9 +18,24 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         inventory.SetActive(false);
         anim = GetComponentInChildren<Animator>();
+        isFinishedAnimation = true;
     }
 
-    private void Update()
+    IEnumerator JumpAnim()
+    {
+        isFinishedAnimation = false;
+        anim.SetTrigger("Jump");
+
+        //Wait until Animator is done playing
+        while (anim.GetCurrentAnimatorStateInfo(0).IsName("Jump") &&
+        anim.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f)
+        {
+            //Wait every frame until animation has finished
+            yield return null;
+        }
+        
+    }
+    void Update()
     {
         if (Input.GetKeyDown(KeyCode.I))
         {
@@ -35,6 +50,14 @@ public class PlayerController : MonoBehaviour
         }
         if (!hasSled)
         {
+            
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+
+                //StartCoroutine(JumpAnim());
+                rb.AddForce(Vector3.up * 5f, ForceMode.Impulse);
+            }
+
             if (Input.GetAxisRaw("Vertical") != 0)
             {
                 anim.SetBool("isWalking", true);
