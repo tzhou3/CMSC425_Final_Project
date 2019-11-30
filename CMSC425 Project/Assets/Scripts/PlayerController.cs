@@ -84,12 +84,14 @@ public class PlayerController : MonoBehaviour
                 {
                     anim.SetBool("isWalking", false);
                     transform.position += transform.forward * speed/2 * Time.deltaTime;
+                    //rb.AddForce(transform.forward * speed/2, ForceMode.Impulse);
                 }
                 //character is walking
                 else
                 {
                     anim.SetBool("isWalking", true);
                     transform.position += transform.forward * speed * Time.deltaTime;
+                   //rb.AddForce(transform.forward * speed, ForceMode.Impulse);
                 }
                
             }
