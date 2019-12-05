@@ -162,6 +162,28 @@ public class PlayerController : MonoBehaviour
         
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Wedges")
+        {
+            GameObject[] wedges = GameObject.FindGameObjectsWithTag("Wedges");
+        }
+        else if (other.tag == "SleddyParts")
+        {
+            Debug.Log("here1");
+        }
+        else if (other.tag == "Rails")
+        {
+            Debug.Log("Here2");
+        }
+        else if(other.tag == "Planks")
+        {
+            Debug.Log("here3");
+        }
+        Destroy(other.gameObject);
+        
+    }
+    
     bool IsGrounded()
     {
         RaycastHit hit;
