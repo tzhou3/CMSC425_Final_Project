@@ -3,7 +3,47 @@ guid: 37529a0a443b34ed0ba4476ab83bb88b
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wedge.1Mat
+    second: {fileID: 2100000, guid: 1dbecd12ab46a4c1d9a412dc923b8641, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wedge.1_1Mat
+    second: {fileID: 2100000, guid: 1dbecd12ab46a4c1d9a412dc923b8641, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wedge.2Mat
+    second: {fileID: 2100000, guid: 1dbecd12ab46a4c1d9a412dc923b8641, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wedge.2_1Mat
+    second: {fileID: 2100000, guid: 1dbecd12ab46a4c1d9a412dc923b8641, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wedge.4Mat
+    second: {fileID: 2100000, guid: 1dbecd12ab46a4c1d9a412dc923b8641, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wedge.4_1Mat
+    second: {fileID: 2100000, guid: 1dbecd12ab46a4c1d9a412dc923b8641, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WedgeMat
+    second: {fileID: 2100000, guid: 1dbecd12ab46a4c1d9a412dc923b8641, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wedge_1Mat
+    second: {fileID: 2100000, guid: 1dbecd12ab46a4c1d9a412dc923b8641, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
