@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 public class PlayerController : MonoBehaviour
 {
@@ -13,34 +14,25 @@ public class PlayerController : MonoBehaviour
     public GameObject inventory;
     public Animator anim;
     private bool hasSled;
-    private bool isFinishedAnimation;
+    private int numItems;
+    public Sprite plankSprite;
+    public Sprite railsSprite;
+    public Sprite sledSprite;
+    public Sprite wedgeSprite;
 
+    InventorySlot[] slots;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         inventory.SetActive(false);
         anim = GetComponentInChildren<Animator>();
-        isFinishedAnimation = true;
         hasSled = true;
         doubleJump = 0;
         transform.Find("sleddingModel").gameObject.SetActive(false);
         controller = GetComponent<CharacterController>();
-    }
-
-    IEnumerator JumpAnim()
-    {
-        isFinishedAnimation = false;
-        anim.SetTrigger("Jump");
-
-        //Wait until Animator is done playing
-        while (anim.GetCurrentAnimatorStateInfo(0).IsName("Jump") &&
-        anim.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f)
-        {
-            //Wait every frame until animation has finished
-            yield return null;
-        }
-        
+        numItems = 0;
+        slots = inventory.GetComponentsInChildren<InventorySlot>();
     }
     void Update()
     {
@@ -167,20 +159,46 @@ public class PlayerController : MonoBehaviour
         if (other.tag == "Wedges")
         {
             GameObject[] wedges = GameObject.FindGameObjectsWithTag("Wedges");
+            for(var i = 0; i < wedges.Length; i++)
+            {
+                Destroy(wedges[i]);
+            }
+            slots[numItems].addItem(wedgeSprite);
+            numItems++;
         }
         else if (other.tag == "SleddyParts")
         {
-            Debug.Log("here1");
+            GameObject[] sledParts = GameObject.FindGameObjectsWithTag("SleddyParts");
+            
+            for (var i = 0; i < sledParts.Length; i++)
+            {
+                Destroy(sledParts[i]);
+            }
+            slots[numItems].addItem(sledSprite);
+            numItems++;
         }
         else if (other.tag == "Rails")
         {
-            Debug.Log("Here2");
+            GameObject[] rails = GameObject.FindGameObjectsWithTag("Rails");
+            
+            for (var i = 0; i < rails.Length; i++)
+            {
+                Destroy(rails[i]);
+            }
+            slots[numItems].addItem(railsSprite);
+            numItems++;
         }
         else if(other.tag == "Planks")
         {
-            Debug.Log("here3");
+            GameObject[] planks = GameObject.FindGameObjectsWithTag("Planks");
+            
+            for (var i = 0; i < planks.Length; i++)
+            {
+                Destroy(planks[i]);
+            }
+            slots[numItems].addItem(plankSprite);
+            numItems++;
         }
-        Destroy(other.gameObject);
         
     }
     
