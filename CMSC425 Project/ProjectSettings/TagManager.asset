@@ -8,6 +8,7 @@ TagManager:
   - Rails
   - Wedges
   - SleddyParts
+  - Death
   layers:
   - Default
   - TransparentFX

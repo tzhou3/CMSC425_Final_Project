@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     public float speed;
@@ -225,8 +226,17 @@ public class PlayerController : MonoBehaviour
             }
             slots[numItems].addItem(plankSprite);
             numItems++;
+        }else if(other.tag == "Death")
+        {
+            RestartScene();
         }
         
+    }
+
+    void RestartScene()
+    {
+        Scene thisScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(thisScene.name);
     }
     
     bool IsGrounded()
