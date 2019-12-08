@@ -870,7 +870,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 703177999}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -148.4, y: 40, z: 170.8}
+  m_LocalPosition: {x: 41, y: 81, z: 86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 87053611}
@@ -2524,6 +2524,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ruin Maze
       objectReference: {fileID: 0}
+    - target: {fileID: 7774442923116313530, guid: 32ea56ed7deb44ea2bcde78e4f6570c2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1155620984643087047, guid: 32ea56ed7deb44ea2bcde78e4f6570c2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4335112269526885474, guid: 32ea56ed7deb44ea2bcde78e4f6570c2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2703,16 +2713,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.74133
-      objectReference: {fileID: 0}
-    - target: {fileID: 1155620984643087047, guid: 32ea56ed7deb44ea2bcde78e4f6570c2,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7774442923116313530, guid: 32ea56ed7deb44ea2bcde78e4f6570c2,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7844220173282613472, guid: 32ea56ed7deb44ea2bcde78e4f6570c2,
         type: 3}
