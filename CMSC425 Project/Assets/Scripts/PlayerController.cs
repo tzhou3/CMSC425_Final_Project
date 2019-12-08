@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public float rotationSpeed;
     public float jump;
-    private float doubleJump;
+    private int doubleJump;
     private float GroundDistance;
     public float accel;
     private Rigidbody rb;
@@ -39,6 +39,13 @@ public class PlayerController : MonoBehaviour
 
         if (IsGrounded())
         {
+            if (doubleJump == 1)
+            {
+                Debug.Log("GROUNDED FIRST");
+            }
+
+            anim.SetBool("secondJump", false);
+            anim.SetBool("firstJump", false);
             doubleJump = 0;
         }
  
@@ -60,10 +67,18 @@ public class PlayerController : MonoBehaviour
             {
 
                 doubleJump += 1;
-                if (doubleJump < 2)
+                if (doubleJump <= 2)
                 {
+                    if (doubleJump == 2)
+                    {
+                        anim.SetBool("secondJump", true);
+                        rb.AddForce(Vector3.up * jump, ForceMode.Impulse);
+                    } else
+                    {
+                        anim.SetBool("firstJump", true);
+                        rb.AddForce(Vector3.up * jump, ForceMode.Impulse);
+                    }
                     //StartCoroutine(JumpAnim());
-                    rb.AddForce(Vector3.up * jump, ForceMode.Impulse);
                 }
 
           
@@ -205,7 +220,7 @@ public class PlayerController : MonoBehaviour
     bool IsGrounded()
     {
         RaycastHit hit;
-        float distance = 1f;
+        float distance = .25f;
         Vector3 dir = new Vector3(0, -1);
 
         if (Physics.Raycast(transform.position, dir, out hit, distance))
