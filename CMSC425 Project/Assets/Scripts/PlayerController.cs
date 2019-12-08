@@ -7,13 +7,14 @@ public class PlayerController : MonoBehaviour
     public float rotationSpeed;
     public float jump;
     private int doubleJump;
-    private float GroundDistance;
+    private float groundDistance;
     public float accel;
     private Rigidbody rb;
     private CharacterController controller;
     public GameObject inventory;
     public Animator anim;
     private bool hasSled;
+    private bool isRunning;
     private int numItems;
     public Sprite plankSprite;
     public Sprite railsSprite;
@@ -34,16 +35,29 @@ public class PlayerController : MonoBehaviour
         numItems = 0;
         slots = inventory.GetComponentsInChildren<InventorySlot>();
     }
+
     void Update()
     {
+        if (Input.GetKeyUp(KeyCode.UpArrow))
+        {
+            isRunning = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            isRunning = true;
+        }
 
         if (IsGrounded())
         {
-            if (doubleJump == 1)
+            if (doubleJump == 1 && isRunning)
             {
-                Debug.Log("GROUNDED FIRST");
+                anim.SetBool("continueRunning", true);
+            } else
+            {
+                anim.SetBool("continueRunning", false);
             }
-
+            
             anim.SetBool("secondJump", false);
             anim.SetBool("firstJump", false);
             doubleJump = 0;
@@ -65,7 +79,6 @@ public class PlayerController : MonoBehaviour
             
             if (Input.GetKeyDown(KeyCode.Space))
             {
-
                 doubleJump += 1;
                 if (doubleJump <= 2)
                 {
@@ -81,7 +94,6 @@ public class PlayerController : MonoBehaviour
                     //StartCoroutine(JumpAnim());
                 }
 
-          
             }
 
             if ((Input.GetAxisRaw("Vertical") != 0))
@@ -89,7 +101,7 @@ public class PlayerController : MonoBehaviour
                 //character is jumping
                 if (!IsGrounded())
                 {
-                    anim.SetBool("isWalking", false);
+                    anim.SetBool("isWalking", true);
                     transform.position += transform.forward * speed/2 * Time.deltaTime;
                     //rb.AddForce(transform.forward * speed/2, ForceMode.Impulse);
                 }
