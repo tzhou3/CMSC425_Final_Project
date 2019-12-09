@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour
                     if (doubleJump == 2)
                     {
                         anim.SetBool("secondJump", true);
-                        rb.AddForce(Vector3.up * jump, ForceMode.Impulse);
+                        rb.AddForce(Vector3.up * 1.25f * jump, ForceMode.Impulse);
                     } else
                     {
                         anim.SetBool("firstJump", true);
@@ -102,18 +102,17 @@ public class PlayerController : MonoBehaviour
                 //character is jumping
                 if (!IsGrounded())
                 {
-                    anim.SetBool("isWalking", true);
+                    
                     transform.position += transform.forward * speed/2 * Time.deltaTime;
                     //rb.AddForce(transform.forward * speed/2, ForceMode.Impulse);
                 }
                 //character is walking
                 else
                 {
-                    anim.SetBool("isWalking", true);
-                    transform.position += transform.forward * speed * Time.deltaTime;
+                   transform.position += transform.forward * speed * Time.deltaTime;
                    //rb.AddForce(transform.forward * speed, ForceMode.Impulse);
                 }
-               
+                anim.SetBool("isWalking", true);
             }
             else
             {

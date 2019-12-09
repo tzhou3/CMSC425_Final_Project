@@ -959,7 +959,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd2bfd2726fca4f84a7c75e5379a2a88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 9
   rotationSpeed: 120
   jump: 30
   accel: 3
