@@ -9,6 +9,7 @@ TagManager:
   - Wedges
   - SleddyParts
   - Death
+  - music_collider
   layers:
   - Default
   - TransparentFX

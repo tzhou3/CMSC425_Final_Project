@@ -30,13 +30,12 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         inventory.SetActive(false);
         anim = GetComponentInChildren<Animator>();
-        hasSled = true;
+        hasSled = false;
         doubleJump = 0;
         transform.Find("sleddingModel").gameObject.SetActive(false);
         controller = GetComponent<CharacterController>();
         numItems = 0;
         slots = inventory.GetComponentsInChildren<InventorySlot>();
-        isSledding = false;
     }
 
     void Update()
@@ -76,8 +75,8 @@ public class PlayerController : MonoBehaviour
             {
                 inventory.SetActive(true);
             }
-            //FindObjectOfType<AudioManager>().FadeOut("Glacial_Ruins");
-            //FindObjectOfType<AudioManager>().FadeIn("Glacial_Theme");
+
+            
         }
         if (!hasSled | !Input.GetMouseButton(0))
         {
@@ -192,6 +191,7 @@ public class PlayerController : MonoBehaviour
                 Destroy(wedges[i]);
             }
             slots[numItems].addItem(wedgeSprite);
+            FindObjectOfType<AudioManager>().Play("Item_Pickup");
             numItems++;
         }
         else if (other.tag == "SleddyParts")
@@ -203,6 +203,7 @@ public class PlayerController : MonoBehaviour
                 Destroy(sledParts[i]);
             }
             slots[numItems].addItem(sledSprite);
+            FindObjectOfType<AudioManager>().Play("Item_Pickup");
             numItems++;
         }
         else if (other.tag == "Rails")
@@ -214,6 +215,7 @@ public class PlayerController : MonoBehaviour
                 Destroy(rails[i]);
             }
             slots[numItems].addItem(railsSprite);
+            FindObjectOfType<AudioManager>().Play("Item_Pickup");
             numItems++;
         }
         else if(other.tag == "Planks")
@@ -225,12 +227,19 @@ public class PlayerController : MonoBehaviour
                 Destroy(planks[i]);
             }
             slots[numItems].addItem(plankSprite);
+            FindObjectOfType<AudioManager>().Play("Item_Pickup");
             numItems++;
         }else if(other.tag == "Death")
         {
             RestartScene();
         }
-        if(numItems >= 4)
+        else if (other.tag == "music_collider" && numItems >= 2)
+        {
+            other.gameObject.SetActive(false);
+            FindObjectOfType<AudioManager>().FadeOut("Glacial_Ruins");
+            FindObjectOfType<AudioManager>().FadeIn("Glacial_Theme");
+        }
+        if (numItems >= 4)
         {
             hasSled = true;
         }
@@ -242,7 +251,7 @@ public class PlayerController : MonoBehaviour
         Scene thisScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(thisScene.name);
     }
-    
+
     bool IsGrounded()
     {
         RaycastHit hit;

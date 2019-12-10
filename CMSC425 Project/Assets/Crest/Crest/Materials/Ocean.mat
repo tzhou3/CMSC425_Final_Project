@@ -12,7 +12,6 @@ Material:
   m_ShaderKeywords: _APPLYNORMALMAPPING_ON _CAUSTICS_ON _COMPILESHADERWITHDEBUGINFO_ON
     _COMPUTEDIRECTIONALLIGHT_ON _DEBUGMULTIPLYBYLIGHT0COLOR_ON _FOAM3DLIGHTING_ON
     _FOAM_ON _SUBSURFACEHEIGHTLERP_ON _SUBSURFACESCATTERING_ON _SUBSURFACESHALLOWCOLOUR_ON
-    _TRANSPARENCY_ON
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -147,7 +146,7 @@ Material:
     - _SubSurfaceSunFallOff: 7.11
     - _TexelSize: 0.125
     - _TextureRes: 1024
-    - _Transparency: 1
+    - _Transparency: 0
     - _Underwater: 0
     - _Update: 0.083
     - _WaveFoamBubblesCoverage: 1.68
