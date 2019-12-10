@@ -74,6 +74,8 @@ public class PlayerController : MonoBehaviour
             {
                 inventory.SetActive(true);
             }
+            //FindObjectOfType<AudioManager>().FadeOut("Glacial_Ruins");
+            //FindObjectOfType<AudioManager>().FadeIn("Glacial_Theme");
         }
         if (!hasSled | !Input.GetMouseButton(0))
         {
