@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         inventory.SetActive(false);
         anim = GetComponentInChildren<Animator>();
-        hasSled = true;
+        hasSled = false;
         doubleJump = 0;
         transform.Find("sleddingModel").gameObject.SetActive(false);
         controller = GetComponent<CharacterController>();
@@ -230,6 +230,10 @@ public class PlayerController : MonoBehaviour
         }else if(other.tag == "Death")
         {
             RestartScene();
+        }
+        if(numItems >= 4)
+        {
+            hasSled = true;
         }
         
     }
