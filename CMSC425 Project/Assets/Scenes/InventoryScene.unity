@@ -3444,7 +3444,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 703177999}
   m_LocalRotation: {x: 0.000000007239982, y: -0.874196, z: 0.000000013024101, w: -0.48557335}
-  m_LocalPosition: {x: -247.12024, y: 3.3128169, z: 50.0519}
+  m_LocalPosition: {x: 170, y: 150, z: -120}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 87053611}
@@ -7387,7 +7387,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: a6a5ff9c8ee674a3da39d5d92b08734b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 76.8
+      value: 125
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: a6a5ff9c8ee674a3da39d5d92b08734b,
         type: 3}
@@ -8359,7 +8359,7 @@ GameObject:
   - component: {fileID: 1582864021}
   m_Layer: 0
   m_Name: Ocean
-  m_TagString: Untagged
+  m_TagString: Death
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10307,7 +10307,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1936640228
 MonoBehaviour:
   m_ObjectHideFlags: 0
