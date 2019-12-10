@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     public Sprite railsSprite;
     public Sprite sledSprite;
     public Sprite wedgeSprite;
+    public Vector3 startPos;
     private bool isSledding;
 
     InventorySlot[] slots;
@@ -36,6 +37,7 @@ public class PlayerController : MonoBehaviour
         controller = GetComponent<CharacterController>();
         numItems = 0;
         slots = inventory.GetComponentsInChildren<InventorySlot>();
+        startPos = transform.position;
     }
 
     void Update()
@@ -248,8 +250,7 @@ public class PlayerController : MonoBehaviour
 
     void RestartScene()
     {
-        Scene thisScene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(thisScene.name);
+        transform.position = startPos;
     }
 
     bool IsGrounded()
