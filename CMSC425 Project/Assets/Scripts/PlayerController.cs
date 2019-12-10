@@ -14,13 +14,14 @@ public class PlayerController : MonoBehaviour
     private CharacterController controller;
     public GameObject inventory;
     public Animator anim;
-    private bool hasSled;
+    public bool hasSled;
     private bool isRunning;
     private int numItems;
     public Sprite plankSprite;
     public Sprite railsSprite;
     public Sprite sledSprite;
     public Sprite wedgeSprite;
+    private bool isSledding;
 
     InventorySlot[] slots;
 
@@ -35,6 +36,7 @@ public class PlayerController : MonoBehaviour
         controller = GetComponent<CharacterController>();
         numItems = 0;
         slots = inventory.GetComponentsInChildren<InventorySlot>();
+        isSledding = false;
     }
 
     void Update()
@@ -137,27 +139,41 @@ public class PlayerController : MonoBehaviour
 
         if (hasSled) {
 
-            if (Input.GetMouseButton(0))
+            if (Input.GetKeyDown(KeyCode.Return))
             {
-                transform.Find("riggedModel").gameObject.SetActive(false);
-                transform.Find("sleddingModel").gameObject.SetActive(true);
-                rb.freezeRotation = false;
+                if (!isSledding)
+                {
+                    transform.Find("riggedModel").gameObject.SetActive(false);
+                    transform.Find("sleddingModel").gameObject.SetActive(true);
+                    isSledding = true;
+                    rb.freezeRotation = false;
+                    rb.drag = 0.1f;
+                    rb.AddForce(transform.forward * accel);
+                }
+                else
+                {
+                    transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, 0);
+                    rb.constraints = RigidbodyConstraints.FreezeRotation;
+                    transform.Find("riggedModel").gameObject.SetActive(true);
+                    transform.Find("sleddingModel").gameObject.SetActive(false);
+                    isSledding = false;
 
-                rb.drag = 0.1f;
-                rb.AddForce(transform.forward * accel);
+                }
             }
+                
 
-            else if (Input.GetMouseButtonUp(0))
-            {
-                transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, 0);
-                rb.constraints = RigidbodyConstraints.FreezeRotation;
-                transform.Find("riggedModel").gameObject.SetActive(true);
-                transform.Find("sleddingModel").gameObject.SetActive(false);
+            //else if (Input.GetMouseButton(0) && isSledding)
+            //{
+            //    transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, 0);
+            //    rb.constraints = RigidbodyConstraints.FreezeRotation;
+            //    transform.Find("riggedModel").gameObject.SetActive(true);
+            //    print("setting sledding to not active");
+            //    transform.Find("sleddingModel").gameObject.SetActive(false);
 
         
 
 
-            }
+            //}
             else
             {
 
