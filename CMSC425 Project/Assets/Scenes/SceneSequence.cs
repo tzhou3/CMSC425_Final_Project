@@ -5,12 +5,16 @@ using UnityEngine;
 public class SceneSequence : MonoBehaviour
 {
     public GameObject cam;
+    public GameObject cam2;
     public GameObject mainCam;
 
 
 
     void Start()
     {
+        cam.SetActive(true);
+        mainCam.SetActive(false);
+        cam2.SetActive(false);
         StartCoroutine(Cutscene());
         mainCam.SetActive(true);
     }
@@ -19,8 +23,11 @@ public class SceneSequence : MonoBehaviour
     IEnumerator Cutscene()
     {
         yield return new WaitForSeconds(7);
-        mainCam.SetActive(true);
+        cam2.SetActive(true);
         cam.SetActive(false);
-        
+        yield return new WaitForSeconds(12);
+        mainCam.SetActive(true);
+        cam2.SetActive(false);
+
     }
 }
