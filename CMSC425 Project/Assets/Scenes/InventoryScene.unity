@@ -928,7 +928,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Collect all the pieces to build your sled and escape the island
+  m_text: Collect all 4 pieces, build your sled, and reuinite with your friend!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6280d57bf6590411f88870a02e91085c, type: 2}
   m_sharedMaterial: {fileID: 3487643737064807045, guid: 6280d57bf6590411f88870a02e91085c,
@@ -957,8 +957,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -967,7 +967,7 @@ MonoBehaviour:
   m_textAlignment: 514
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: 10
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -995,15 +995,15 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: -76.9386}
   m_textInfo:
     textComponent: {fileID: 337251377}
-    characterCount: 63
+    characterCount: 69
     spriteCount: 0
     spaceCount: 11
     wordCount: 12
     linkCount: 0
-    lineCount: 3
+    lineCount: 4
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -7600,6 +7600,7 @@ MonoBehaviour:
   cam: {fileID: 2057916680}
   cam2: {fileID: 1294524102}
   mainCam: {fileID: 963194225}
+  canvas: {fileID: 1936640227}
 --- !u!4 &1356129788
 Transform:
   m_ObjectHideFlags: 0
@@ -7864,17 +7865,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 4104f3f9e0653436db68bf3032458605,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 151
+      value: 157.11
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 4104f3f9e0653436db68bf3032458605,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 125.3
+      value: 124.4
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 4104f3f9e0653436db68bf3032458605,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -65
+      value: -71.08
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 4104f3f9e0653436db68bf3032458605,
         type: 3}

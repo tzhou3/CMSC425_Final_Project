@@ -7,12 +7,15 @@ public class SceneSequence : MonoBehaviour
     public GameObject cam;
     public GameObject cam2;
     public GameObject mainCam;
+    public GameObject canvas;
 
 
 
     void Start()
     {
+
         cam.SetActive(true);
+        canvas.SetActive(false);
         mainCam.SetActive(false);
         cam2.SetActive(false);
         StartCoroutine(Cutscene());
@@ -27,7 +30,10 @@ public class SceneSequence : MonoBehaviour
         cam.SetActive(false);
         yield return new WaitForSeconds(12);
         mainCam.SetActive(true);
+        canvas.SetActive(true);
         cam2.SetActive(false);
+        
+
 
     }
 }
