@@ -15,7 +15,7 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        FadeIn("Glacial_Ruins");
+       // FadeIn("Glacial_Ruins");
     }
 
 
