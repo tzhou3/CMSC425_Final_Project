@@ -62,9 +62,16 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        //testing purposes only
         if (Input.GetKeyUp(KeyCode.N))
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene("EndScene");
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+            print("quit");
         }
 
         if (Input.GetKeyUp(KeyCode.UpArrow))
