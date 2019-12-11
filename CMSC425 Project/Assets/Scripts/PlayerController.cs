@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
     public Sprite railsSprite;
     public Sprite sledSprite;
     public Sprite wedgeSprite;
+    public Vector3 startPos;
+    public Vector3 topOfMountain;
     private bool isSledding;
 
     InventorySlot[] slots;
@@ -36,6 +38,8 @@ public class PlayerController : MonoBehaviour
         controller = GetComponent<CharacterController>();
         numItems = 0;
         slots = inventory.GetComponentsInChildren<InventorySlot>();
+        startPos = transform.position;
+        topOfMountain = new Vector3(157,125,-71);
     }
 
     void Update()
@@ -248,8 +252,14 @@ public class PlayerController : MonoBehaviour
 
     void RestartScene()
     {
-        Scene thisScene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(thisScene.name);
+        if (hasSled)
+        {
+            transform.position = topOfMountain;
+        }
+        else
+        {
+            transform.position = startPos;
+        }
     }
 
     bool IsGrounded()
