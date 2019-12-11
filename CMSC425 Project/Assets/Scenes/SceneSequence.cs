@@ -23,8 +23,10 @@ public class SceneSequence : MonoBehaviour
             StartCoroutine(Cutscene());
             mainCam.SetActive(true);
         }
+
         else
         {
+            mainCam.SetActive(true);
             cam.SetActive(false);
             cam2.SetActive(false);
         }
@@ -40,8 +42,5 @@ public class SceneSequence : MonoBehaviour
         mainCam.SetActive(true);
         canvas.SetActive(true);
         cam2.SetActive(false);
-        
-
-
     }
 }
