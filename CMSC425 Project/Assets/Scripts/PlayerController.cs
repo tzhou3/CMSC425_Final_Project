@@ -44,10 +44,15 @@ public class PlayerController : MonoBehaviour
         startPos = transform.position;
         topOfMountain = new Vector3(157,125,-71);
         topOfRamp = new Vector3(154.3f, 120.36f, -70.6f);
-		//if (SceneNumber.instance.prevScene == 3)
-		//{
-		//	prompt.text = "";
-		//}
+	    if (SceneNumber.instance.prevScene == 2)
+		{
+			prompt.SetActive(false);
+		}
+        else
+		{
+			prompt.SetActive(true);
+		}
+
 	}
 
     void Update()
