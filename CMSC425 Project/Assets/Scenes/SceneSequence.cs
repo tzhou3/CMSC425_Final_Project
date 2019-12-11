@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SceneSequence : MonoBehaviour
 {
@@ -13,13 +14,21 @@ public class SceneSequence : MonoBehaviour
 
     void Start()
     {
-
-        cam.SetActive(true);
-        canvas.SetActive(false);
-        mainCam.SetActive(false);
-        cam2.SetActive(false);
-        StartCoroutine(Cutscene());
-        mainCam.SetActive(true);
+        print(SceneNumber.instance.prevScene);
+        if (SceneNumber.instance.prevScene == 0)
+        {
+            cam.SetActive(true);
+            canvas.SetActive(false);
+            mainCam.SetActive(false);
+            cam2.SetActive(false);
+            StartCoroutine(Cutscene());
+            mainCam.SetActive(true);
+        }
+        else
+        {
+            cam.SetActive(false);
+            cam2.SetActive(false);
+        }
     }
 
     // Update is called once per frame

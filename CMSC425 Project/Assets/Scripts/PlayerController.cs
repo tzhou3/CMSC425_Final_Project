@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour
     public Vector3 startPos;
     public Vector3 topOfMountain;
     private bool isSledding;
+    public Vector3 topOfRamp;
+    public TextMesh prompt;
 
     InventorySlot[] slots;
 
@@ -40,10 +42,20 @@ public class PlayerController : MonoBehaviour
         slots = inventory.GetComponentsInChildren<InventorySlot>();
         startPos = transform.position;
         topOfMountain = new Vector3(157,125,-71);
+        topOfRamp = new Vector3(154.3f, 120.36f, -70.6f);
+        if (SceneNumber.instance.prevScene == 3)
+        {
+            prompt.text = "";
+        }
     }
 
     void Update()
     {
+        if (Input.GetKeyUp(KeyCode.N))
+        {
+            SceneManager.LoadScene(2);
+        }
+
         if (Input.GetKeyUp(KeyCode.UpArrow))
         {
             isRunning = false;
@@ -276,6 +288,11 @@ public class PlayerController : MonoBehaviour
         {
             return false;
         }
+    }
+
+    public void JumpAgain()
+    {
+        transform.position = topOfRamp;
     }
 
 }
