@@ -7,6 +7,6 @@ In Glacial, you are an eskimo trapped on a snowy island. Your objective? Explore
 
 Controls:
 WASD or arrow keys to move
-Press I to toggle inventory and see how many pieces you still need to collect
-Press the spacebar to jump, and press again in mid-air to double jump for extra height
+Press I to toggle inventory and see how many pieces you still need to collect.
+Press the spacebar to jump, and press again in mid-air to double jump for extra height.
 Once you have all of the sled pieces, press and hold the left mouse button to sled!
