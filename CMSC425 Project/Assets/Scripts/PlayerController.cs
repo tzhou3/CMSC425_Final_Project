@@ -206,7 +206,7 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.tag == "Island"){
-            Debug.Log("Success");
+            SceneManager.LoadScene("EndScene");
         }
     }
     private void OnTriggerEnter(Collider other)
