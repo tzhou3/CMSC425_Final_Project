@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         inventory.SetActive(false);
         anim = GetComponentInChildren<Animator>();
-        hasSled = false;
+        hasSled = SceneNumber.getState();
         doubleJump = 0;
         transform.Find("sleddingModel").gameObject.SetActive(false);
         controller = GetComponent<CharacterController>();
@@ -52,6 +52,11 @@ public class PlayerController : MonoBehaviour
 		{
 			prompt.SetActive(true);
 		}
+
+        if (hasSled)
+        {
+            RestartScene();
+        }
 
 	}
 

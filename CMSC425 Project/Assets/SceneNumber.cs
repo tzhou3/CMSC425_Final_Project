@@ -7,7 +7,17 @@ public class SceneNumber : MonoBehaviour
     public static SceneNumber instance = null;
 
     public int prevScene = -1;
+    public static bool hasAlreadyWon = false;
+    
+    public static bool getState()
+    {
+        return hasAlreadyWon;
+    }
 
+    public static void setState(bool b)
+    {
+        hasAlreadyWon = b;
+    }
     void Awake()
     {
    
