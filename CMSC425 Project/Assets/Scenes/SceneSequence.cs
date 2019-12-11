@@ -14,8 +14,7 @@ public class SceneSequence : MonoBehaviour
 
     void Start()
     {
-        print(SceneNumber.instance.prevScene);
-        if (SceneNumber.instance.prevScene == 0)
+		if (SceneNumber.instance.prevScene == 0)
         {
             cam.SetActive(true);
             canvas.SetActive(false);

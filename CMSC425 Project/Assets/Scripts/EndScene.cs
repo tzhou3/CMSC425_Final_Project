@@ -15,6 +15,7 @@ public class EndScene : MonoBehaviour
         distance = 0.0f;
         topOfRamp = new Vector3(154.3f, 120.36f, -70.6f);
         player = GameObject.FindGameObjectWithTag("Player");
+        print(player);
     }
     public void Restart()
     {
@@ -23,8 +24,8 @@ public class EndScene : MonoBehaviour
 
     public void JumpAgain()
     {
-        SceneNumber.instance.prevScene = 3;
-        SceneManager.LoadScene(1);
+		SceneNumber.instance.prevScene = 3;
+		SceneManager.LoadScene(1);
         player.transform.position = topOfRamp;
     }
     public void Quit()

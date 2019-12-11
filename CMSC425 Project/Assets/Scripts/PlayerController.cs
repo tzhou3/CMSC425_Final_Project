@@ -25,9 +25,10 @@ public class PlayerController : MonoBehaviour
     public Vector3 topOfMountain;
     private bool isSledding;
     public Vector3 topOfRamp;
-    public TextMesh prompt;
+    public Text prompt;
 
     InventorySlot[] slots;
+    private object SceneNumber;
 
     void Start()
     {
@@ -43,11 +44,11 @@ public class PlayerController : MonoBehaviour
         startPos = transform.position;
         topOfMountain = new Vector3(157,125,-71);
         topOfRamp = new Vector3(154.3f, 120.36f, -70.6f);
-        if (SceneNumber.instance.prevScene == 3)
-        {
-            prompt.text = "";
-        }
-    }
+		//if (SceneNumber.instance.prevScene == 3)
+		//{
+		//	prompt.text = "";
+		//}
+	}
 
     void Update()
     {
