@@ -4570,9 +4570,10 @@ GameObject:
   - component: {fileID: 639857233}
   - component: {fileID: 639857232}
   - component: {fileID: 639857231}
+  - component: {fileID: 639857234}
   m_Layer: 0
   m_Name: Terrain_(-250.0, 0.0, -750.0)
-  m_TagString: Untagged
+  m_TagString: Island
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -4634,6 +4635,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &639857234
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639857230}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 505.4, y: 20, z: 482.3}
+  m_Center: {x: 249.74, y: 0, z: 280.4}
 --- !u!1 &694763481 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1512979285989630843, guid: 32ea56ed7deb44ea2bcde78e4f6570c2,
@@ -4733,6 +4747,8 @@ MonoBehaviour:
   wedgeSprite: {fileID: 21300000, guid: 93150afe75eecd541abd6e5cc5555d59, type: 3}
   startPos: {x: 0, y: 0, z: 0}
   topOfMountain: {x: 0, y: 0, z: 0}
+  topOfRamp: {x: 0, y: 0, z: 0}
+  prompt: {fileID: 0}
 --- !u!4 &703178003
 Transform:
   m_ObjectHideFlags: 0
@@ -4741,7 +4757,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 703177999}
   m_LocalRotation: {x: 0.000000007239982, y: -0.874196, z: 0.000000013024101, w: -0.48557335}
-  m_LocalPosition: {x: 154.3, y: 130.1, z: -70.6}
+  m_LocalPosition: {x: 158.7, y: 125.1, z: -70}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 87053611}
@@ -7283,7 +7299,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!111 &1294524103
 Animation:
   m_ObjectHideFlags: 0
@@ -7586,7 +7602,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1356129787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10379,7 +10395,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!111 &2057916681
 Animation:
   m_ObjectHideFlags: 0

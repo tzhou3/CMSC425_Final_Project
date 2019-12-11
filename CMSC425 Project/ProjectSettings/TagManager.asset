@@ -10,6 +10,7 @@ TagManager:
   - SleddyParts
   - Death
   - music_collider
+  - Island
   layers:
   - Default
   - TransparentFX

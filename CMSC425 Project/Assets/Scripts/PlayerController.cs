@@ -250,6 +250,10 @@ public class PlayerController : MonoBehaviour
         {
             RestartScene();
         }
+        else if (other.tag == "Island")
+        {
+            Debug.Log("SUCCESS");
+        }
         else if (other.tag == "music_collider" && numItems >= 2)
         {
             other.gameObject.SetActive(false);
