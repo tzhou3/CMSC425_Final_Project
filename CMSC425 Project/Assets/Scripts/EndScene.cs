@@ -24,9 +24,8 @@ public class EndScene : MonoBehaviour
 
     public void JumpAgain()
     {
-		SceneNumber.instance.prevScene = 3;
-		SceneManager.LoadScene(1);
-        player.transform.position = topOfRamp;
+	SceneNumber.instance.prevScene = 2;
+	SceneManager.LoadScene(1);
     }
     public void Quit()
     {

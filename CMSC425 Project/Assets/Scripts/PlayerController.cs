@@ -44,10 +44,15 @@ public class PlayerController : MonoBehaviour
         startPos = transform.position;
         topOfMountain = new Vector3(157,125,-71);
         topOfRamp = new Vector3(154.3f, 120.36f, -70.6f);
-		//if (SceneNumber.instance.prevScene == 3)
-		//{
-		//	prompt.text = "";
-		//}
+	    if (SceneNumber.instance.prevScene == 2)
+		{
+			prompt.SetActive(false);
+		}
+        else
+		{
+			prompt.SetActive(true);
+		}
+
 	}
 
     void Update()
@@ -76,12 +81,12 @@ public class PlayerController : MonoBehaviour
             {
                 anim.SetBool("continueRunning", false);
             }
-            
+
             anim.SetBool("secondJump", false);
             anim.SetBool("firstJump", false);
             doubleJump = 0;
         }
- 
+
         if (Input.GetKeyDown(KeyCode.I))
         {
             if(inventory.activeSelf == true)
@@ -93,11 +98,11 @@ public class PlayerController : MonoBehaviour
                 inventory.SetActive(true);
             }
 
-            
+
         }
         if (!hasSled | !Input.GetMouseButton(0))
         {
-            
+
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 doubleJump += 1;
@@ -122,7 +127,7 @@ public class PlayerController : MonoBehaviour
                 //character is jumping
                 if (!IsGrounded())
                 {
-                    
+
                     transform.position += transform.forward * speed/2 * Time.deltaTime;
                     //rb.AddForce(transform.forward * speed/2, ForceMode.Impulse);
                 }
@@ -195,7 +200,7 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        
+
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -220,7 +225,7 @@ public class PlayerController : MonoBehaviour
         else if (other.tag == "SleddyParts")
         {
             GameObject[] sledParts = GameObject.FindGameObjectsWithTag("SleddyParts");
-            
+
             for (var i = 0; i < sledParts.Length; i++)
             {
                 Destroy(sledParts[i]);
@@ -232,7 +237,7 @@ public class PlayerController : MonoBehaviour
         else if (other.tag == "Rails")
         {
             GameObject[] rails = GameObject.FindGameObjectsWithTag("Rails");
-            
+
             for (var i = 0; i < rails.Length; i++)
             {
                 Destroy(rails[i]);
@@ -244,7 +249,7 @@ public class PlayerController : MonoBehaviour
         else if(other.tag == "Planks")
         {
             GameObject[] planks = GameObject.FindGameObjectsWithTag("Planks");
-            
+
             for (var i = 0; i < planks.Length; i++)
             {
                 Destroy(planks[i]);
@@ -270,7 +275,7 @@ public class PlayerController : MonoBehaviour
         {
             hasSled = true;
         }
-        
+
     }
 
     void RestartScene()
@@ -307,4 +312,3 @@ public class PlayerController : MonoBehaviour
     }
 
 }
-
