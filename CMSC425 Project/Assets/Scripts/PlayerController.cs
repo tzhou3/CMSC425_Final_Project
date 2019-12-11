@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         inventory.SetActive(false);
         anim = GetComponentInChildren<Animator>();
-        hasSled = true;
+        hasSled = false;
         doubleJump = 0;
         transform.Find("sleddingModel").gameObject.SetActive(false);
         controller = GetComponent<CharacterController>();
@@ -198,6 +198,12 @@ public class PlayerController : MonoBehaviour
         
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.tag == "Island"){
+            Debug.Log("Success");
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Wedges")
