@@ -25,10 +25,10 @@ public class PlayerController : MonoBehaviour
     public Vector3 topOfMountain;
     private bool isSledding;
     public Vector3 topOfRamp;
-    public Text prompt;
+    public GameObject prompt;
 
     InventorySlot[] slots;
-    private object SceneNumber;
+
 
     void Start()
     {

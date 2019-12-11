@@ -15,6 +15,7 @@ public class EndScene : MonoBehaviour
         distance = 0.0f;
         topOfRamp = new Vector3(154.3f, 120.36f, -70.6f);
         player = GameObject.FindGameObjectWithTag("Player");
+        SceneNumber.instance.prevScene = 2;
         print(player);
     }
     public void Restart()

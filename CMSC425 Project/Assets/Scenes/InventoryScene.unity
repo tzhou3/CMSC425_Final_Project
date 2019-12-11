@@ -4734,7 +4734,7 @@ MonoBehaviour:
   startPos: {x: 0, y: 0, z: 0}
   topOfMountain: {x: 0, y: 0, z: 0}
   topOfRamp: {x: 0, y: 0, z: 0}
-  prompt: {fileID: 0}
+  prompt: {fileID: 337251375}
 --- !u!4 &703178003
 Transform:
   m_ObjectHideFlags: 0
