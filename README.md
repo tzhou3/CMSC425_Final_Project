@@ -1,6 +1,8 @@
 # CMSC425_Final_Project
 Glacial
 
+To view a video demo of the game, visit: https://www.youtube.com/watch?v=PKfQ3etkWq0
+
 Corbett Blair, Elie Long, Hayden Williams, Tim Zhou
 
 In Glacial, you are an eskimo trapped on a snowy island. Your objective? Explore the mountainous terrain and ruins, find and collect all 4 components of your sled, and make the big jump off the island to reunite with your friend. 
